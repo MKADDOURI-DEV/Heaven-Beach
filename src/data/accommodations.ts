@@ -87,7 +87,7 @@ export const categories: AccommodationCategory[] = [
     type: 'apartment',
     name: 'Les Appartements',
     unitLabel: 'appartements',
-    unitCount: 25,
+    unitCount: 35,
     shortDescription: 'Appartements spacieux pour la famille ou les amis',
     description:
       "Vingt-cinq appartements avec salon, cuisine équipée et terrasse, pensés pour un séjour prolongé en famille ou entre amis, à proximité immédiate de l'océan.",
