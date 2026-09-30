@@ -110,13 +110,13 @@ export default function BookingBar() {
               </div>
 
               {/* Guests */}
-              <div className="flex-1">
+              <div className="flex-1 lg:flex-[1.6]">
                 <label className="mb-1.5 block text-xs font-medium uppercase tracking-widest2 text-navy-500">
                   {t.booking.guests}
                 </label>
                 <div className="flex items-center gap-3 rounded-xl border border-navy-200 bg-sand-50 px-3 py-2.5">
                   <Users className="h-5 w-5 text-gold-500" />
-                  <div className="flex flex-1 items-center justify-between gap-2">
+                  <div className="flex flex-1 flex-wrap items-center justify-between gap-x-4 gap-y-2">
                     <div className="flex items-center gap-1.5">
                       <button type="button" onClick={() => setAdults((v) => Math.max(1, v - 1))} className="flex h-7 w-7 items-center justify-center rounded-full border border-navy-200 text-navy-600 transition-colors hover:border-navy-400 hover:text-navy-900">−</button>
                       <span className="w-8 text-center text-sm text-navy-900">{adults}</span>
@@ -134,7 +134,7 @@ export default function BookingBar() {
               </div>
 
               {/* Submit */}
-              <button type="submit" className="btn-primary whitespace-nowrap lg:px-8">
+              <button type="submit" className="btn-primary w-full justify-center whitespace-nowrap lg:w-auto lg:px-8">
                 <Search className="h-4 w-4" />
                 {t.booking.checkAvailability}
               </button>
