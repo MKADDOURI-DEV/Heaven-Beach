@@ -44,7 +44,7 @@ export const categories: AccommodationCategory[] = [
     description:
       "Douze suites lumineuses pensées pour un séjour confortable à quelques pas de la plage de Sidi Rahal. Décoration épurée, literie qualité hôtelière, salle de bain privée et balcon avec vue dégagée sur l'océan.",
     images: SUITE_IMAGES,
-    pricePerNight: 800,
+    pricePerNight: 1000,
     currency: 'MAD',
     capacity: 2,
     beds: '1 lit double',
@@ -68,7 +68,7 @@ export const categories: AccommodationCategory[] = [
     description:
       "Trois chambres à la décoration sobre, idéales pour une escapade courte ou un séjour en solo. Un espace fonctionnel, calme et bien équipé, à quelques minutes à pied de la plage.",
     images: ROOM_IMAGES,
-    pricePerNight: 550,
+    pricePerNight: 600,
     currency: 'MAD',
     capacity: 2,
     beds: '1 lit double ou 2 lits simples',
@@ -92,7 +92,7 @@ export const categories: AccommodationCategory[] = [
     description:
       "Vingt-cinq appartements avec salon, cuisine équipée et terrasse, pensés pour un séjour prolongé en famille ou entre amis, à proximité immédiate de l'océan.",
     images: APARTMENT_IMAGES,
-    pricePerNight: 1400,
+    pricePerNight: 1200,
     currency: 'MAD',
     capacity: 5,
     beds: '2 chambres',
