@@ -14,10 +14,10 @@ const SUITE_IMAGES = [
 ];
 
 const ROOM_IMAGES = [
-  '/media/chambres/_DSC1181.jpg',
-  '/media/chambres/_DSC1304.jpg',
-  '/media/chambres/_DSC1306.jpg',
-  '/media/chambres/_DSC1307.jpg',
+  '/media/chambres/chambre-1.webp',
+  '/media/chambres/chambre-2.webp',
+  '/media/chambres/chambre-3.webp',
+  '/media/chambres/chambre-4.webp',
 ];
 
 const APARTMENT_IMAGES = [
@@ -31,6 +31,7 @@ const APARTMENT_IMAGES = [
   '/media/appartements/appartements-08.jpg',
   '/media/appartements/appartements-09.jpg',
   '/media/appartements/appartements-10.jpg',
+  '/media/appartements/appartements-terrasse.webp',
 ];
 
 export const categories: AccommodationCategory[] = [

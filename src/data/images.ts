@@ -39,5 +39,5 @@ export const experienceImages = {
 export const accommodationImages = {
   main: '/media/appartements/appartements-01.jpg',
   secondary: '/media/suites/suites-01.jpg',
-  tertiary: '/media/chambres/chambres-01.jpg',
+  tertiary: '/media/chambres/chambre-1.webp',
 };
