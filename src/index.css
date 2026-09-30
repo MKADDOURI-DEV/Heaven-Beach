@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-sand-50 text-navy-900 font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+  [dir="rtl"] {
+    text-align: right;
+  }
+}
+
+@layer components {
+  .container-lux {
+    @apply mx-auto max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-medium uppercase tracking-widest2 text-navy-900 transition-all duration-300 hover:bg-gold-400 hover:shadow-xl hover:shadow-gold-500/30 active:scale-95;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-medium uppercase tracking-widest2 text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-navy-900 active:scale-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-navy-200 px-7 py-3.5 text-sm font-medium uppercase tracking-widest2 text-navy-700 transition-all duration-300 hover:border-navy-900 hover:bg-navy-900 hover:text-white active:scale-95;
+  }
+  .section-label {
+    @apply mb-4 inline-block text-xs font-medium uppercase tracking-widest3 text-gold-600;
+  }
+  .section-title {
+    @apply font-serif text-4xl font-medium leading-tight text-navy-900 sm:text-5xl;
+  }
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fridge magnet drop animation */
+@keyframes magnetDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) rotate(var(--start-rot, 0deg)) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(6px) rotate(var(--final-rot, 0deg)) scale(1);
+  }
+  80% {
+    transform: translateY(-3px) rotate(var(--final-rot, 0deg)) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--final-rot, 0deg)) scale(1);
+  }
+}
+
+.magnet {
+  --final-rot: 0deg;
+  --start-rot: 0deg;
+  animation: magnetDrop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
+.magnet.is-settled {
+  animation: none;
+  opacity: 1;
+  transform: rotate(var(--final-rot, 0deg));
+}
+
+/* Refrigerator surface texture */
+.fridge-surface {
+  background-color: #f7f4ef;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.018) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0,0,0,0.022) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, transparent 70%);
+  background-size: 100% 100%;
+  position: relative;
+}
+.fridge-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.88 0 0 0 0 0.85 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.6;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f5ede0; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #1e293b; }
+
+/* Date input styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
