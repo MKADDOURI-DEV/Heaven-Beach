@@ -68,7 +68,7 @@ export const categories: AccommodationCategory[] = [
     description:
       "Trois chambres à la décoration sobre, idéales pour une escapade courte ou un séjour en solo. Un espace fonctionnel, calme et bien équipé, à quelques minutes à pied de la plage.",
     images: ROOM_IMAGES,
-    pricePerNight: 600,
+    pricePerNight: 700,
     currency: 'MAD',
     capacity: 2,
     beds: '1 lit double ou 2 lits simples',
@@ -92,7 +92,7 @@ export const categories: AccommodationCategory[] = [
     description:
       "Vingt-cinq appartements avec salon, cuisine équipée et terrasse, pensés pour un séjour prolongé en famille ou entre amis, à proximité immédiate de l'océan.",
     images: APARTMENT_IMAGES,
-    pricePerNight: 1200,
+    pricePerNight: 600,
     currency: 'MAD',
     capacity: 5,
     beds: '2 chambres',
