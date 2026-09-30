@@ -2,7 +2,7 @@ import { useLang } from '@/i18n/LangContext';
 import { useReveal } from '@/hooks/useReveal';
 import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '212 5 22 96 07 08';
+const WHATSAPP_NUMBER = '+212 7 67 89 31 21';
 const PHONE_NUMBER = '+212 5 22 96 07 08';
 const EMAIL = 'Heavenbeach26@gmail.com';
 
