@@ -27,7 +27,7 @@ export default function AccommodationPreview() {
                 className="group relative block overflow-hidden rounded-2xl shadow-xl shadow-navy-900/10 transition-transform duration-300 hover:-translate-y-1.5"
               >
                 <div className="aspect-[4/5] overflow-hidden">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={cat.images[0]}
                     alt={text.name}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

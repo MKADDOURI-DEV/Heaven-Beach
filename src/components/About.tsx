@@ -17,9 +17,9 @@ export default function About() {
         {/* Left: Image */}
         <div className="relative">
           <div className="overflow-hidden rounded-2xl shadow-2xl shadow-navy-900/15">
-            <img
+            <img loading="lazy" decoding="async"
               src={aboutImage}
-              alt="HEAVEN BEACH - piscine avec vue sur locéan"
+              alt="HEAVEN BEACH — piscine avec vue sur l’océan à Sidi Rahal"
               className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>

@@ -32,7 +32,7 @@ export default function Experience() {
                 transition: `opacity 0.8s ease ${i * 150}ms, transform 0.8s ease ${i * 150}ms`,
               }}
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={card.image}
                 alt={card.label}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"

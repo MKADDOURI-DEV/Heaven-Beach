@@ -46,7 +46,7 @@ export default function Hero() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
         />
       </div>
       {/* Dark overlay */}

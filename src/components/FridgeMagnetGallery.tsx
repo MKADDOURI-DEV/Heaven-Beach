@@ -157,7 +157,7 @@ export default function FridgeMagnetGallery() {
                     (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
                   }}
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={magnet.image.src}
                     alt={magnet.image.alt}
                     className="h-full w-full rounded-sm object-cover transition-transform duration-500 group-hover:scale-110"

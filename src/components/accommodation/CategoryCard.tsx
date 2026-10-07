@@ -13,7 +13,7 @@ export default function CategoryCard({ category }: { category: AccommodationCate
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-navy-900/12"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
-        <img
+        <img loading="lazy" decoding="async"
           src={category.images[0]}
           alt={text.name}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

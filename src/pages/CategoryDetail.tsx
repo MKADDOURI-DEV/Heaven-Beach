@@ -4,6 +4,8 @@ import { ArrowLeft, ArrowRight, Users, Maximize2, BedDouble, Check, X, Home } fr
 import { getCategoryById, categories } from '@/data/accommodations';
 import { useBookingFlow } from '@/context/BookingFlowContext';
 import { useCategoryText, useLang } from '@/i18n/LangContext';
+import { useSeo } from '@/hooks/useSeo';
+import { SITE_URL, SITE_NAME } from '@/config/seo';
 
 export default function CategoryDetail() {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -31,6 +33,28 @@ export default function CategoryDetail() {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [categoryId]);
+
+  const seoText = category ? catText(category.id) : undefined;
+  const seoPath = `/hebergements/${categoryId ?? ''}`;
+  useSeo({
+    title: seoText ? `${seoText.name} — ${SITE_NAME} Sidi Rahal` : SITE_NAME,
+    description: seoText ? seoText.description.slice(0, 158) : '',
+    path: seoPath,
+    image: category ? `${SITE_URL}${category.images[0]}` : undefined,
+    jsonLd: seoText
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: SITE_NAME, item: `${SITE_URL}/` },
+              { '@type': 'ListItem', position: 2, name: 'Hébergements', item: `${SITE_URL}/hebergements` },
+              { '@type': 'ListItem', position: 3, name: seoText.name, item: `${SITE_URL}${seoPath}` },
+            ],
+          },
+        ]
+      : undefined,
+  });
 
   if (!category) return <Navigate to="/hebergements" replace />;
 
@@ -182,7 +206,7 @@ export default function CategoryDetail() {
                   to={`/hebergements/${c.id}`}
                   className="group flex items-center gap-4 rounded-2xl border border-navy-100 bg-white p-4 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-navy-900/10"
                 >
-                  <img src={c.images[0]} alt={other.name} className="h-20 w-24 flex-shrink-0 rounded-xl object-cover" />
+                  <img loading="lazy" decoding="async" src={c.images[0]} alt={other.name} className="h-20 w-24 flex-shrink-0 rounded-xl object-cover" />
                   <div className="min-w-0">
                     <p className="font-serif text-lg font-medium text-navy-900">{other.name}</p>
                     <p className="mt-0.5 text-sm text-navy-500">

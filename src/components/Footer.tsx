@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-4 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <img
+            <img loading="lazy" decoding="async"
   src="/media/logo/logo-full.png"
   alt="Heaven Beach - Hôtel Sidi Rahal"
   className="mb-4 h-24 w-auto sm:h-28"

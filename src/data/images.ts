@@ -24,7 +24,7 @@ export const galleryImages: GalleryImage[] = [
 ];
 
 export const heroImage = '/media/video/hero-poster.jpg';
-export const heroVideo = '/media/video/hero-heaven-beach.mp4';
+export const heroVideo = '/media/video/hero-heaven-beach-web.mp4';
 
 export const aboutImage = '/media/gallery/gallery-04.jpg';
 

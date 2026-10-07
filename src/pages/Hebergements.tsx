@@ -1,9 +1,28 @@
 import { categories } from '@/data/accommodations';
 import CategoryCard from '@/components/accommodation/CategoryCard';
 import { useLang } from '@/i18n/LangContext';
+import { useSeo } from '@/hooks/useSeo';
+import { PAGE_SEO } from '@/seo/pages';
+import { SITE_URL } from '@/config/seo';
 
 export default function Hebergements() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const seo = PAGE_SEO.hebergements;
+  useSeo({
+    title: seo.title[lang],
+    description: seo.description[lang],
+    path: seo.path,
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'HEAVEN BEACH', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: seo.title[lang].split(' — ')[0], item: `${SITE_URL}${seo.path}` },
+        ],
+      },
+    ],
+  });
   const totalUnits = categories.reduce((sum, c) => sum + c.unitCount, 0);
 
   return (
